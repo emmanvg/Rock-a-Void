@@ -1,16 +1,16 @@
 package edu.uprm.rock_a_void;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
+public class MainMenu extends Activity{
 
-public class MainMenu extends Activity {
-
-	TextView Start, Ranking, About;
+	Button Start, Ranking, About;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,33 +19,37 @@ public class MainMenu extends Activity {
         
         Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/rakoon.ttf");
         
-        Start = (TextView) findViewById(R.id.textViewStartGame);
+        Start = (Button) findViewById(R.id.buttonStartGame);
         Start.setTypeface(tf);
-        
-        Ranking = (TextView) findViewById(R.id.TextViewRankings);
+        Start.setOnClickListener(new OnClickListener()
+        {
+        	public void onClick(View v)
+        	{
+        		Intent i = new Intent(getApplicationContext(), Game.class);
+            	startActivity(i);
+        	}
+        });
+               
+        Ranking = (Button) findViewById(R.id.buttonRankings);
         Ranking.setTypeface(tf);
+        Ranking.setOnClickListener(new OnClickListener()
+        {
+        	public void onClick(View v)
+        	{
+        		Intent i = new Intent(getApplicationContext(), Rankings.class);
+            	startActivity(i);
+        	}
+        });
         
-        About = (TextView) findViewById(R.id.TextViewAbout);
+        About = (Button) findViewById(R.id.buttonAbout);
         About.setTypeface(tf);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        About.setOnClickListener(new OnClickListener()
+        {
+        	public void onClick(View v)
+        	{
+        		Intent i = new Intent(getApplicationContext(), About.class);
+            	startActivity(i);
+        	}
+        });
     }
 }

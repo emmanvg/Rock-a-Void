@@ -3,7 +3,40 @@
     android:id="@+id/RelativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sand_texture"
+    android:background="@drawable/water"
     android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageMountainRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/mountain_description"
+        android:paddingRight="-22dp"
+        android:src="@drawable/mountain_right" />
+
+    <ImageView
+        android:id="@+id/imageMountainLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/mountain_description"
+        android:paddingLeft="-20dp"
+        android:src="@drawable/mountain_left" />
+
+    <ImageView
+        android:id="@+id/imageSubmarine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/submarine_description"
+        android:maxHeight="200dp"
+        android:maxWidth="150dp"
+        android:src="@drawable/submarine" />
 
 </RelativeLayout>

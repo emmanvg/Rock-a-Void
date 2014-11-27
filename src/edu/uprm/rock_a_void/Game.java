@@ -1,17 +1,32 @@
 package edu.uprm.rock_a_void;
 
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class Game extends Activity {
+public class Game extends Activity implements SensorEventListener{
+	
+	Sensor mAccelerometer;
+	SensorManager mSensorManager;
+	Float x;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        
+        mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
 
@@ -33,4 +48,17 @@ public class Game extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+    
+    @Override
+    public void onSensorChanged(SensorEvent event)
+    {
+    	x = event.values[0];
+    }
+
+
+	@Override
+	public void onAccuracyChanged(Sensor arg0, int arg1) {
+		// TODO Auto-generated method stub
+		
+	}
 }
