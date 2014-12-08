@@ -10,6 +10,10 @@ package edu.uprm.rock_a_void;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int aboutTitles=0x7f060000;
+        public static final int about_emails=0x7f060001;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -20,6 +24,7 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f040000;
         public static final int activity_vertical_margin=0x7f040001;
+        public static final int scores_padding=0x7f040003;
         public static final int text_size=0x7f040002;
     }
     public static final class drawable {
@@ -31,17 +36,34 @@ public final class R {
         public static final int sand_texture=0x7f020005;
         public static final int submarine=0x7f020006;
         public static final int texture_rock=0x7f020007;
-        public static final int water=0x7f020008;
+        public static final int texture_rock1=0x7f020008;
+        public static final int water=0x7f020009;
     }
     public static final class id {
-        public static final int RelativeLayout=0x7f080000;
-        public static final int action_settings=0x7f080007;
-        public static final int buttonAbout=0x7f080005;
-        public static final int buttonRankings=0x7f080006;
-        public static final int buttonStartGame=0x7f080004;
-        public static final int imageMountainLeft=0x7f080002;
-        public static final int imageMountainRight=0x7f080001;
-        public static final int imageSubmarine=0x7f080003;
+        public static final int GameTitle=0x7f090005;
+        public static final int RankingsLayout=0x7f090013;
+        public static final int RelativeLayout=0x7f090000;
+        public static final int aboutDescription=0x7f090004;
+        public static final int aboutEmails=0x7f090006;
+        public static final int aboutHowToPlay=0x7f090001;
+        public static final int aboutUs=0x7f090002;
+        public static final int action_settings=0x7f090017;
+        public static final int buttonAbout=0x7f090010;
+        public static final int buttonRankings=0x7f090011;
+        public static final int buttonStartGame=0x7f09000f;
+        public static final int imageMountainLeft=0x7f090008;
+        public static final int imageMountainRight=0x7f090007;
+        public static final int imageRockLeft=0x7f09000d;
+        public static final int imageRockMiddle=0x7f09000a;
+        public static final int imageRockRight=0x7f09000e;
+        public static final int imageSubmarine=0x7f090009;
+        public static final int imageView1=0x7f090003;
+        public static final int list=0x7f090016;
+        public static final int score=0x7f09000b;
+        public static final int scoreValue=0x7f09000c;
+        public static final int title=0x7f090014;
+        public static final int titleText=0x7f090012;
+        public static final int user=0x7f090015;
     }
     public static final class layout {
         public static final int activity_about=0x7f030000;
@@ -50,14 +72,25 @@ public final class R {
         public static final int activity_rankings=0x7f030003;
     }
     public static final class menu {
-        public static final int main_menu=0x7f070000;
+        public static final int main_menu=0x7f080000;
     }
     public static final class string {
+        public static final int PLAYER=0x7f050010;
+        public static final int RANKINGS=0x7f05000f;
+        public static final int SCORE=0x7f050011;
+        public static final int aboutEmails=0x7f05000e;
+        public static final int about_description_text=0x7f05000b;
+        public static final int about_how_to_play=0x7f05000c;
         public static final int about_string=0x7f050004;
+        public static final int about_us=0x7f05000d;
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int game_title=0x7f05000a;
         public static final int mountain_description=0x7f050005;
         public static final int rankings_string=0x7f050003;
+        public static final int rock_description=0x7f050008;
+        public static final int score_string=0x7f050007;
+        public static final int start_counter=0x7f050009;
         public static final int start_game_string=0x7f050002;
         public static final int submarine_description=0x7f050006;
     }
@@ -83,10 +116,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }

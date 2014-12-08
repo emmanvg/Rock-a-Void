@@ -8,5 +8,18 @@
     <string name="about_string">ABOUT</string>
     <string name="mountain_description">Mountain Border</string>
     <string name="submarine_description">Submarine</string>
+    <string name="score_string">SCORE:</string>
+    <string name="rock_description">Middle rock</string>
+    <string name="start_counter">0</string>
+    <string name="game_title">ROCK-A-VOID</string>
+    <string name="about_description_text">DESCRIPTION: Rock-a-void is an endless underwater navigating adventure where the main idea is to not get drowned. Avoid the obstacles confronting your submarine in order to achieve the maximum alive underwater distance.   </string>
+    <string name="about_how_to_play">HOW TO PLAY: Simple, slowly tilt your tablet left or right in order to avoid crashing into the rocks.</string>
+    <string name="about_us">ABOUT US: We are a group of students from the University of Puerto Rico at Mayagüez campus that want you to have fun! </string>
+    <string name="aboutEmails">emmanuelle.vargas@upr.edu, cecilia.chen@upr.edu, giselle.montano@upr.edu</string>
+    <color name="aboutTitles">#0080FF</color>
+    <color name="about_emails">#005C45</color>
+    <string name="RANKINGS">RANKINGS</string>
+    <string name="PLAYER">PLAYER</string>
+    <string name="SCORE">SCORE</string>
 
 </resources>

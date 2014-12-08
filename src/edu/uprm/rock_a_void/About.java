@@ -1,17 +1,26 @@
 package edu.uprm.rock_a_void;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class About extends Activity {
+	
+	TextView Title;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        
+        Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/rakoon.ttf");
+        
+        Title = (TextView) findViewById(R.id.GameTitle);
+        Title.setTypeface(tf);
     }
 
 
@@ -19,6 +28,7 @@ public class About extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        
         return true;
     }
 

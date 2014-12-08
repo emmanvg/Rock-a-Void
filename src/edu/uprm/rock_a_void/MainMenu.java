@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainMenu extends Activity{
 
+	TextView Title;
 	Button Start, Ranking, About;
 	
     @Override
@@ -18,6 +20,9 @@ public class MainMenu extends Activity{
         setContentView(R.layout.activity_main_menu);
         
         Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/rakoon.ttf");
+        
+        Title = (TextView) findViewById(R.id.titleText);
+        Title.setTypeface(tf);
         
         Start = (Button) findViewById(R.id.buttonStartGame);
         Start.setTypeface(tf);
@@ -37,6 +42,10 @@ public class MainMenu extends Activity{
         	public void onClick(View v)
         	{
         		Intent i = new Intent(getApplicationContext(), Rankings.class);
+        		Bundle bundle = new Bundle();
+        		
+        		bundle.putBoolean("menu", true);
+        		i.putExtras(bundle);
             	startActivity(i);
         	}
         });
