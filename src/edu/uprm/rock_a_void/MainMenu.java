@@ -35,13 +35,13 @@ public class MainMenu extends Activity{
         	}
         });
                
-        Ranking = (Button) findViewById(R.id.buttonRankings);
+        Ranking = (Button) findViewById(R.id.buttonScores);
         Ranking.setTypeface(tf);
         Ranking.setOnClickListener(new OnClickListener()
         {
         	public void onClick(View v)
         	{
-        		Intent i = new Intent(getApplicationContext(), Rankings.class);
+        		Intent i = new Intent(getApplicationContext(), Scores.class);
         		Bundle bundle = new Bundle();
         		
         		bundle.putBoolean("menu", true);

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RankingsLayout"
+    style="android:buttonStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="fill_horizontal"
+    android:background="@drawable/sand_texture"
+    android:columnCount="1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_height="482dp"
+        android:layout_column="0"
+        android:layout_gravity="fill"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_row="0"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/score_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal" >
+
+            <TextView
+                android:id="@+id/user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="@string/PLAYER"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="fill"
+            android:layout_marginBottom="@dimen/scores_padding"
+            android:layout_marginTop="@dimen/scores_padding"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/activity_vertical_margin" >
+
+        </ListView>
+
+    </LinearLayout>
+
+</GridLayout>

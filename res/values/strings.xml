@@ -21,5 +21,6 @@
     <string name="RANKINGS">RANKINGS</string>
     <string name="PLAYER">PLAYER</string>
     <string name="SCORE">SCORE</string>
+    <string name="score_text">SCORES</string>
 
 </resources>

@@ -76,8 +76,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/rock_description"
-        android:paddingLeft="300dp"
         android:src="@drawable/texture_rock1"
+        android:translationX="-150dp"
         android:translationY="-150dp" />
 
     <ImageView
@@ -86,8 +86,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/rock_description"
-        android:paddingRight="300dp"
         android:src="@drawable/texture_rock1"
+        android:translationX="150dp"
         android:translationY="-150dp" />
 
 </RelativeLayout>

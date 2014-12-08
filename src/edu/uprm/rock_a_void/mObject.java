@@ -23,7 +23,7 @@ public class mObject
 	
 	public boolean getActive()
 	{
-		return(active);
+		return(this.active);
 	}
 	
 	
@@ -40,34 +40,43 @@ public class mObject
 	
 	public float getTranslationY()
 	{
-		return(Image.getTranslationY());
+		return(this.Image.getTranslationY());
 	}
 	
 	public void setTranslationY(float num)
 	{
-		Image.setTranslationY(num);
+		this.Image.setTranslationY(num);
 	}
 	
 	public void deActivate()
 	{
-		active = false;
+		this.active = false;
+	}
+	
+	public void debug()
+	{
+		System.out.println("Active: " + this.active);
+		System.out.println("Coords: " + this.Image.getX() + " " + this.Image.getY());
+		System.out.println("Radius: " + this.radius);
 	}
 	
 	public boolean crash(mObject m2)
 	{
-		double radiuses = Math.abs(this.radius - m2.radius);
+		double radiuses_res = Math.pow(this.radius - m2.radius, 2.0);
+		double radiuses_sum = Math.pow(this.radius + m2.radius, 2.0);
 		double x1 = Image.getX(), x2 = m2.Image.getX();
 		double y1 = Image.getY(), y2 = m2.Image.getY();
-		double distance = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+		double distance = Math.pow(x1 - x2, 2.0) + Math.pow(y1 - y2, 2.0);
 		
 		/*
-		 	Debug Purposes.
-			System.out.println("Ship: " + rockImage.getX() + " " + rockImage.getY());
-			System.out.println("Rock: " + m2.rockImage.getX() + " " + m2.rockImage.getY());
+		 	//Debug Purposes.
+			System.out.println("Ship: " + Image.getX() + " " + Image.getY());
+			System.out.println("Rock: " + m2.Image.getX() + " " + m2.Image.getY());
 			System.out.println("Distance: " + distance);
-			System.out.println("Radiuses: " + radiuses);
+			System.out.println("Radiuses: " + radiuses_res + " " + radiuses_sum);
+			System.out.println("Logic: " + (radiuses_res <= distance && distance <= radiuses_sum));
 		*/
 		
-		return(radiuses > distance);
+		return((radiuses_res <= distance && distance <= radiuses_sum) && m2.active);
 	}
 }

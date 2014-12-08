@@ -17,7 +17,7 @@
         android:layout_marginTop="61dp"
         android:gravity="center"
         android:text="@string/about_how_to_play"
-        android:textColor="@color/aboutTitles"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="20sp" />
 
     <ImageView
@@ -41,7 +41,7 @@
         android:layout_marginTop="43dp"
         android:gravity="center"
         android:text="@string/about_description_text"
-        android:textColor="@color/aboutTitles"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="20sp" />
 
     <TextView
@@ -52,7 +52,7 @@
         android:layout_centerVertical="true"
         android:gravity="center"
         android:text="@string/about_us"
-        android:textColor="@color/aboutTitles"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="20sp" />
 
     <TextView
@@ -76,7 +76,7 @@
         android:layout_marginBottom="19dp"
         android:gravity="center"
         android:text="@string/aboutEmails"
-        android:textColor="@color/aboutTitles"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="20sp" />
 
 </RelativeLayout>

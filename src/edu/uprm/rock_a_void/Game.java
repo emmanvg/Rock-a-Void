@@ -24,8 +24,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class Game extends Activity implements SensorEventListener{
-	
+public class Game extends Activity implements SensorEventListener
+{	
 	private static ArrayList<mObject> Rocks;
 	private static mObject Ship;
 	private static long delay;
@@ -39,7 +39,8 @@ public class Game extends Activity implements SensorEventListener{
 	private static Integer rockavoid;
 	
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         
@@ -67,11 +68,11 @@ public class Game extends Activity implements SensorEventListener{
         
         Rocks = new ArrayList<mObject>();
         
-        Rocks.add(new mObject(lRock, 25.0));
-        Rocks.add(new mObject(mRock, 25.0));
-        Rocks.add(new mObject(rRock, 25.0));
+        Rocks.add(new mObject(lRock, 70.0));
+        Rocks.add(new mObject(mRock, 70.0));
+        Rocks.add(new mObject(rRock, 70.0));
         
-        Ship = new mObject(ship, 10.0);
+        Ship = new mObject(ship, 50.0);
         
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -87,6 +88,7 @@ public class Game extends Activity implements SensorEventListener{
     	
     	for(mObject rock: rocks)
     	{
+    		//rock.debug();
     		actives[n] = rock.getActive();
     		n++;
     	}
@@ -102,6 +104,13 @@ public class Game extends Activity implements SensorEventListener{
     	}
 	}
 
+    @Override
+    protected void onPause()
+    {
+    	super.onPause();
+    	mSensorManager.unregisterListener(this);
+    }
+    
 	@Override
     public void onSensorChanged(SensorEvent event)
     {
@@ -111,38 +120,40 @@ public class Game extends Activity implements SensorEventListener{
     	{
 	    		if(Ship.crash(rock) && rock.getActive())
 	    		{
+	    			mSensorManager.unregisterListener(this);
 	    			AlertDialog.Builder alert = new AlertDialog.Builder(this);
 	    			alert.setTitle("Game Over");
 	    			alert.setMessage("Enter your name:");
 
-	    			// Set an EditText view to get user input 
+	    			// Set an EditText view to get user input.
 	    			final EditText input = new EditText(this);
 	    			alert.setView(input);
 
-	    			alert.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
-	    			public void onClick(DialogInterface dialog, int whichButton) {
-	    			  Editable value = input.getText();
-	    			  // Do something with value!
+	    			alert.setPositiveButton("Submit", new DialogInterface.OnClickListener()
+	    			{
+	    			
+	    				public void onClick(DialogInterface dialog, int whichButton)
+	    				{
+	    					Editable value = input.getText();
 	    			  
-		    			Intent intent = new Intent(Game.this, Rankings.class);
-		    			Bundle bundle = new Bundle();
-		    			
-		    			bundle.putInt("score", rockavoid);
-		    			bundle.putBoolean("menu", false);
-		    			bundle.putString("name", value.toString());
-		    			
-		    			intent.putExtras(bundle);
-		    			startActivity(intent);
-	    			  }
+			    			Intent intent = new Intent(Game.this, Scores.class);
+			    			Bundle bundle = new Bundle();
+			    			
+			    			bundle.putInt("score", rockavoid);
+			    			bundle.putBoolean("menu", false);
+			    			bundle.putString("name", value.toString());
+			    			
+			    			intent.putExtras(bundle);
+			    			startActivity(intent);
+			    			finish();
+		    			  }
 	    			});
 
 	    			alert.show();
-	    			// see http://androidsnippets.com/prompt-user-input-with-an-alertdialog	
-	    			
 	    		}
     	}
     	
-    	if(translateShip < (screen.x / 2.0f) - 145 && translateShip > ((-1.0f * screen.x) / 2.0f) + 145)
+    	if(translateShip < (screen.x / 2.0f) - 145 && translateShip > ((-1.0f * screen.x) / 2.0f) + 130)
     		Ship.horizontalTranslation(translateShip);
     	
     	for(mObject rock: Rocks)
@@ -151,14 +162,13 @@ public class Game extends Activity implements SensorEventListener{
     		{
     			float translateRock = rock.getTranslationY() + 4.0f;
     			
-    			if(translateRock < screen.y)
+    			if(translateRock < screen.y - 100)
     				rock.setTranslationY(translateRock);
     				
     			else
 		    	{
 		    		rockavoid++;
 		    		value.setText(" " + rockavoid.toString());
-		    		rock.setTranslationY(-150.0f);
 		    		rock.deActivate();
 		    	}
     		}
@@ -175,7 +185,8 @@ public class Game extends Activity implements SensorEventListener{
 
 
 	@Override
-	public void onAccuracyChanged(Sensor arg0, int arg1) {
+	public void onAccuracyChanged(Sensor arg0, int arg1)
+	{
 		// TODO Auto-generated method stub
 		
 	}

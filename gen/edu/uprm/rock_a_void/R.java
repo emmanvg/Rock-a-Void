@@ -29,7 +29,7 @@ public final class R {
     }
     public static final class drawable {
         public static final int button_layout=0x7f020000;
-        public static final int capture2=0x7f020001;
+        public static final int capture=0x7f020001;
         public static final int ic_launcher=0x7f020002;
         public static final int mountain_left=0x7f020003;
         public static final int mountain_right=0x7f020004;
@@ -49,7 +49,7 @@ public final class R {
         public static final int aboutUs=0x7f090002;
         public static final int action_settings=0x7f090017;
         public static final int buttonAbout=0x7f090010;
-        public static final int buttonRankings=0x7f090011;
+        public static final int buttonScores=0x7f090011;
         public static final int buttonStartGame=0x7f09000f;
         public static final int imageMountainLeft=0x7f090008;
         public static final int imageMountainRight=0x7f090007;
@@ -58,9 +58,9 @@ public final class R {
         public static final int imageRockRight=0x7f09000e;
         public static final int imageSubmarine=0x7f090009;
         public static final int imageView1=0x7f090003;
-        public static final int list=0x7f090016;
         public static final int score=0x7f09000b;
         public static final int scoreValue=0x7f09000c;
+        public static final int textView=0x7f090016;
         public static final int title=0x7f090014;
         public static final int titleText=0x7f090012;
         public static final int user=0x7f090015;
@@ -69,7 +69,8 @@ public final class R {
         public static final int activity_about=0x7f030000;
         public static final int activity_game=0x7f030001;
         public static final int activity_main_menu=0x7f030002;
-        public static final int activity_rankings=0x7f030003;
+        public static final int activity_scores=0x7f030003;
+        public static final int list_item=0x7f030004;
     }
     public static final class menu {
         public static final int main_menu=0x7f080000;
@@ -90,6 +91,7 @@ public final class R {
         public static final int rankings_string=0x7f050003;
         public static final int rock_description=0x7f050008;
         public static final int score_string=0x7f050007;
+        public static final int score_text=0x7f050012;
         public static final int start_counter=0x7f050009;
         public static final int start_game_string=0x7f050002;
         public static final int submarine_description=0x7f050006;
