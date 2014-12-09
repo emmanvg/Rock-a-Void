@@ -4,11 +4,11 @@ Rock-a-Void
 COMP4999-004# Android Programming: Final Project
 
 ROCK-A-VOID
- 
-GROUP MEMBERS:
-    1.        Giselle Montano
-    2.        Emmanuelle Vargas
-    3.        Cecilia Chen
+
+Group Members:
+Giselle Montano 
+Emmanuelle Vargas 
+Cecilia Chen 
  
 PROJECT DESCRIPTION
 The addictive endless running game Rock-A-Void is an android game in which you tilt tablet left or right to control the submarine and avoid the obstacles that may hit you. The goal is to achieve the longest possible path without crashing into an object, in our case rocks.
